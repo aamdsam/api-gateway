@@ -1,6 +1,5 @@
-require('dotenv').config();
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const { APP_NAME } = process.env;
 
 /* GET users listing. */
