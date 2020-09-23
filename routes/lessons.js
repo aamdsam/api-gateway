@@ -1,15 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const chaptersHandler = require('./handler/chapters');
+const lessonsHandler = require('./handler/lessons');
 
-const verifyToken = require('../middlewares/verifyToken');
+router.get('/', lessonsHandler.getAll);
+router.get('/:id', lessonsHandler.get);
 
-router.get('/', chaptersHandler.getAll);
-router.get('/:id', chaptersHandler.get);
-
-router.post('/', chaptersHandler.create);
-router.put('/:id', chaptersHandler.update);
-router.delete('/:id', chaptersHandler.destroy);
+router.post('/', lessonsHandler.create);
+router.put('/:id', lessonsHandler.update);
+router.delete('/:id', lessonsHandler.destroy);
 
 module.exports = router;
