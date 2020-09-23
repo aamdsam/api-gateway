@@ -26,11 +26,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/courses', verifyToken, coursesRouter);
+app.use('/courses', coursesRouter);
 app.use('/media', mediaRouter);
 app.use('/orders', ordersRouter);
 app.use('/payments', paymentsRouter);
 app.use('/refresh-tokens', refreshTokensRouter);
 app.use('/mentors', verifyToken, mentorsRouter);
+app.use('/courses', coursesRouter);
 
 module.exports = app;
